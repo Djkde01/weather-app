@@ -15,18 +15,18 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicPath));
 
 app.get("/", (req, res) => {
-  res.render("index", { title: "Wenas prros :D", name: "Pepe" });
+  res.render("index", { title: "Home", name: "Pepe" });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
-    title: "You need help?",
+    title: "Help",
     message: "Everything is ok :D",
   });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about", { title: "How can I explain you this?" });
+  res.render("about", { title: "About the page" });
 });
 app.get("/weather", (req, res) => {
   res.send({
