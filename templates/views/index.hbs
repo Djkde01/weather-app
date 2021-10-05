@@ -21,8 +21,14 @@
         </button>
       </form>
       {{>loader}}
-      <h1 id="forecast-title"></h1>
-      <p id="forecast-message"></p>
+      <section>
+        <div>
+          <h1 id="forecast-title"></h1>
+          <p id="forecast-message"></p>
+        </div>
+          <img id="forecast-icon" src="" alt="forecast icon" class="hidden"/>
+      </section>
+
     </main>
     {{>footer}}
     <script src="/js/index.js"></script>

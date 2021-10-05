@@ -9,6 +9,11 @@ main {
   margin: 0 auto;
   padding: 0 16px;
 }
+main section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-top: 3rem;
+}
 h3 {
   margin: 1rem auto;
 }
@@ -51,4 +56,9 @@ nav ul a:hover {
 
 #forecast-title {
   margin: 1.5rem auto;
+}
+
+#forecast-icon {
+  align-self: center;
+  justify-self: center;
 }

@@ -12,10 +12,11 @@ const forecast = (lat, long, callback) => {
       const temperature = body.current.temperature;
       const feelsLike = body.current.feelslike;
       const forecast = body.current.weather_descriptions[0];
-      callback(
-        undefined,
-        `${forecast}. It is currently ${temperature}° out. It feels like ${feelsLike}° out`
-      );
+      const icon = body.current.weather_icons[0];
+      callback(undefined, {
+        forecastData: `${forecast}. It is currently ${temperature}° out. It feels like ${feelsLike}° out`,
+        forecastIcon: icon,
+      });
     }
   });
 };
