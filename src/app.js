@@ -17,7 +17,7 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicPath));
 
 app.get("/", (req, res) => {
-  res.render("index", { title: "Home", name: "Pepe" });
+  res.render("index", { title: "Home", name: "Search for any location" });
 });
 
 app.get("/help", (req, res) => {
