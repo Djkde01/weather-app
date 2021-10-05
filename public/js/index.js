@@ -11,20 +11,20 @@ weatherForm.addEventListener("submit", (e) => {
   forecastMsg.innerText = "Getting results...";
   loader.classList.remove("hidden");
   forecastIcon.classList.add("hidden");
-  fetch(
-    `http://localhost:3000/weather?address=${encodeURIComponent(search.value)}`
-  ).then((response) => {
-    response.json().then((data) => {
-      loader.classList.add("hidden");
-      forecastIcon.classList.remove("hidden");
-      if (data.error) {
-        forecastTitle.innerText = data.error;
-        forecastMsg.innerText = "";
-      } else {
-        forecastTitle.innerText = data.location;
-        forecastMsg.innerText = data.forecast;
-        forecastIcon.src = data.icon;
-      }
-    });
-  });
+  fetch(`/weather?address=${encodeURIComponent(search.value)}`).then(
+    (response) => {
+      response.json().then((data) => {
+        loader.classList.add("hidden");
+        forecastIcon.classList.remove("hidden");
+        if (data.error) {
+          forecastTitle.innerText = data.error;
+          forecastMsg.innerText = "";
+        } else {
+          forecastTitle.innerText = data.location;
+          forecastMsg.innerText = data.forecast;
+          forecastIcon.src = data.icon;
+        }
+      });
+    }
+  );
 });
