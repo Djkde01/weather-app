@@ -49,6 +49,7 @@ nav ul a:hover {
 
 .about-image {
   width: 250px;
+  margin-bottom: 2rem;
 }
 .hidden {
   display: none;

@@ -15,11 +15,11 @@ weatherForm.addEventListener("submit", (e) => {
     (response) => {
       response.json().then((data) => {
         loader.classList.add("hidden");
-        forecastIcon.classList.remove("hidden");
         if (data.error) {
           forecastTitle.innerText = data.error;
           forecastMsg.innerText = "";
         } else {
+          forecastIcon.classList.remove("hidden");
           forecastTitle.innerText = data.location;
           forecastMsg.innerText = data.forecast;
           forecastIcon.src = data.icon;
